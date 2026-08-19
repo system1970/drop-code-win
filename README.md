@@ -4,7 +4,7 @@
 
 DropCode is a native-feeling Windows port of [R44VC0RP/drop-code](https://github.com/R44VC0RP/drop-code) (a macOS Swift app that embeds `libghostty`). It gives you a single, always-ready terminal panel that drops down from the top of the screen so your AI coding agent is one keystroke away.
 
-- Press the **toggle hotkey** to slide the panel down from the top of the screen.
+- Press the **toggle hotkey** (`Ctrl+Space` by default) to slide the panel down from the top of the screen.
 - Launch **OpenCode**, **Codex**, **Claude**, or any **custom** shell command.
 - Adjust **panel height** and **window opacity** from the tray / settings.
 - Your agent keeps its **own colours and theme** — DropCode renders true 24-bit colour via [xterm.js](https://xtermjs.org/) and a Windows ConPTY backend, so nothing is stripped out.
@@ -86,7 +86,7 @@ load, so a corrupted file can never crash the app.
 | Agent / Shell      | OpenCode, Codex, Claude, PowerShell, Command Prompt, Custom |
 | Custom command     | Executable (quoted paths supported) + arguments          |
 | Working directory  | Start directory (empty = home)                           |
-| Toggle hotkey      | Electron accelerator, e.g. `Ctrl+Backquote`              |
+| Toggle hotkey      | Electron accelerator, e.g. `CommandOrControl+Space`     |
 | Panel height       | Pixels (200–1000)                                        |
 | Window opacity     | 0.4–1.0                                                  |
 | Font size / family | Terminal typography                                      |

@@ -1,5 +1,8 @@
 import * as os from 'node:os';
-import pty from 'node-pty';
+// node-pty is a CommonJS module without an `__esModule` flag, so a default
+// import resolves to `undefined` under `esModuleInterop`. Use a namespace
+// import to get the module's exports (incl. `spawn`).
+import * as pty from 'node-pty';
 import { createLogger } from '../services/logService';
 
 const logger = createLogger('pty');

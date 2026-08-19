@@ -25,7 +25,9 @@ export class SettingsStore {
   read(): Settings {
     try {
       const raw = fs.readFileSync(this.filePath, 'utf-8');
-      const parsed = JSON.parse(raw) as unknown;
+      // Tolerate a UTF-8 BOM (e.g. if a user hand-edits the file in an editor
+      // that adds one) so parsing never fails on the first character.
+      const parsed = JSON.parse(raw.replace(/^\uFEFF/, '')) as unknown;
       return normalizeSettings(parsed);
     } catch (error) {
       if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {

@@ -126,7 +126,7 @@ export class SettingsView {
         <div class="field">
           <label for="hotkey">Toggle hotkey (Electron accelerator)</label>
           <input type="text" name="hotkey" id="hotkey" value="${escapeHtml(settings.hotkey)}" />
-          <span class="hint">e.g. CommandOrControl+Backquote, Ctrl+Shift+Space, Alt+Space</span>
+          <span class="hint">e.g. CommandOrControl+Space, Control+Alt+Space, Alt+Enter</span>
         </div>
 
         <div class="field">

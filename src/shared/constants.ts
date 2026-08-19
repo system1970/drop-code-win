@@ -9,7 +9,7 @@
 export const SETTINGS_SCHEMA_VERSION = 1;
 
 /** Default global hotkey (Electron accelerator syntax). */
-export const DEFAULT_HOTKEY = 'CommandOrControl+Backquote';
+export const DEFAULT_HOTKEY = 'CommandOrControl+Space';
 
 /** Clamp ranges for numeric settings. */
 export const LIMITS = {

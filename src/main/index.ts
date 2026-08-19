@@ -100,9 +100,9 @@ function bootstrap(): void {
   logger.info('DropCode initialised.');
 }
 
-if (require.main === module) {
-  app.whenReady().then(bootstrap).catch((error) => {
-    logger.error('Fatal during bootstrap.', error);
-    app.quit();
-  });
-}
+// Electron loads this file as the app entry point, so `require.main` is not this
+// module. Boot directly once the app is ready.
+void app.whenReady().then(bootstrap).catch((error) => {
+  logger.error('Fatal during bootstrap.', error);
+  app.quit();
+});
