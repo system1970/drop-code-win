@@ -1,0 +1,31 @@
+appId: com.dropcode.win
+productName: DropCode
+copyright: Copyright © 2026 system1970
+directories:
+  output: dist
+  buildResources: assets
+files:
+  - out/**
+  - assets/**
+  - package.json
+asar: true
+# node-pty ships prebuilt N-API binaries (see .npmrc), so we must NOT let
+# electron-builder try to recompile native modules — that would require a
+# C/C++ toolchain the end user may not have.
+npmRebuild: false
+nodeGypRebuild: false
+win:
+  target:
+    - nsis
+    - portable
+  artifactName: ${productName}-${version}-setup.${ext}
+  publisherName: system1970
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: DropCode
+  menuCategory: Development
+portable:
+  artifactName: ${productName}-${version}-portable.${ext}
+icon: assets/icon.ico

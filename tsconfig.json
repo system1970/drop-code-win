@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": [],
+    "jsx": "preserve",
+    "allowImportingTsExtensions": false,
+    "useDefineForClassFields": true
+  },
+  "include": ["src/renderer", "src/shared", "test", "vite.config.ts", "vitest.config.ts"],
+  "exclude": ["node_modules", "out", "dist"]
+}

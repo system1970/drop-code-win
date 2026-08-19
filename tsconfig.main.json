@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out",
+    "rootDir": "src",
+    "types": ["node", "electron"],
+    "lib": ["ES2022"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": false
+  },
+  "include": ["src/main", "src/preload", "src/shared"],
+  "exclude": ["node_modules", "out", "dist"]
+}
