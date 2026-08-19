@@ -58,7 +58,16 @@ export class DropDownWindow {
 
   /** Load the renderer (dev server URL or packaged file). */
   load(url: string): void {
-    void this.window.loadURL(url);
+    // In dev the Vite server may not be listening the instant Electron starts,
+    // so retry the load a few times until it succeeds.
+    const tryLoad = (attemptsLeft: number): void => {
+      this.window.loadURL(url).catch(() => {
+        if (attemptsLeft > 0) {
+          setTimeout(() => tryLoad(attemptsLeft - 1), 400);
+        }
+      });
+    };
+    tryLoad(25);
   }
 
   loadFile(filePath: string): void {
