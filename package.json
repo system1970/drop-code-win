@@ -29,7 +29,7 @@
     "compile": "tsc -p tsconfig.main.json",
     "build:renderer": "vite build",
     "build": "npm run compile && npm run build:renderer",
-    "dev": "concurrently -k -n VITE,ELECTRON -c blue,green \"vite\" \"cross-env ELECTRON_RENDERER_URL=http://localhost:5173 electron .\"",
+    "dev": "npm run compile && concurrently -k -n VITE,ELECTRON -c blue,green \"vite\" \"cross-env ELECTRON_RENDERER_URL=http://localhost:5173 electron .\"",
     "start": "electron .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
