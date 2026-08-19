@@ -14,7 +14,7 @@ export const DEFAULT_HOTKEY = 'CommandOrControl+Space';
 /** Clamp ranges for numeric settings. */
 export const LIMITS = {
   height: { min: 200, max: 1000, default: 420 },
-  opacity: { min: 0.4, max: 1.0, default: 0.96 },
+  opacity: { min: 0.4, max: 1.0, default: 0.88 },
   fontSize: { min: 10, max: 32, default: 14 },
 } as const;
 

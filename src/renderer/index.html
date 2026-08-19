@@ -8,13 +8,12 @@
   </head>
   <body>
     <div id="app">
-      <header id="titlebar">
-        <span id="brand">DropCode</span>
-        <div id="titlebar-spacer"></div>
-        <button id="settings-button" type="button" title="Settings" aria-label="Settings">⚙</button>
-        <button id="hide-button" type="button" title="Hide (Esc)" aria-label="Hide">✕</button>
-      </header>
       <main id="terminal-host"></main>
+      <!-- Floating, hover-revealed controls: the panel is "headless" by default. -->
+      <div id="controls">
+        <button id="settings-button" type="button" title="Settings" aria-label="Settings">&#9881;</button>
+        <button id="hide-button" type="button" title="Hide (Esc)" aria-label="Hide">&#10005;</button>
+      </div>
     </div>
     <div id="settings-overlay" class="hidden" role="dialog" aria-modal="true" aria-label="Settings"></div>
     <script type="module" src="/main.ts"></script>
